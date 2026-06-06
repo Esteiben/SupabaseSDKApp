@@ -33,3 +33,9 @@ Objetivos:
 - **Carga asíncrona** de datos con corutinas.
 - **Manejo de errores** y retroalimentación con `Toast`.
 - **Diseño limpio** y adaptable.
+
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/3f53d08e-94cd-451e-9119-6b7f8735ec04" />
+
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/4a099fa4-75c8-431e-ae34-b8d3e65f8be8" />
+
+
