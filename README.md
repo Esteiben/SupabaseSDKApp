@@ -34,6 +34,52 @@ Objetivos:
 - **Manejo de errores** y retroalimentación con `Toast`.
 - **Diseño limpio** y adaptable.
 
+
+## ⚙️ Configuración y ejecución
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/tuusuario/supabase-student-manager.git
+cd supabase-student-manager
+```
+
+### 2. Abrir en Android Studio
+
+- Abre Android Studio → `Open an Existing Project` → selecciona la carpeta del proyecto.
+- Espera a que Gradle sincronice las dependencias.
+
+### 3. Configurar Supabase
+
+- Crea un proyecto en [Supabase](https://supabase.com/).
+- Ejecuta los scripts SQL proporcionados (`materias` y `alumnos`) para crear las tablas e insertar los datos.
+- En el bucket de Storage, crea una carpeta `media` (o el que uses) y asegúrate de que sea **pública** para que las fotos sean accesibles.
+
+### 4. Agregar credenciales
+
+En el archivo `network/SupabaseClient.kt`, reemplaza las constantes:
+
+```kotlin
+private const val SUPABASE_URL = "https://tu-proyecto.supabase.co"
+private const val SUPABASE_ANON_KEY = "tu-clave-anon-publica"
+```
+
+### 5. Ejecutar la app
+
+- Conecta un dispositivo físico o emulador.
+- Haz clic en **Run ▶️**.
+
+> **Nota**: Si las fotos no cargan, verifica las rutas en la tabla `alumnos.foto` y que el bucket de Storage sea público o se use el token adecuado.
+
+## 🧪 Filtro de materias (simulación)
+
+Como la base de datos original **no tiene una tabla de inscripción** (alumno ↔ materia), se implementó una asignación **determinística** basada en el `id` del alumno:  
+`idMateria = listaMaterias[idAlumno % totalMaterias]`.  
+Esto permite probar el filtro combinado semestre + materia sin modificar el esquema real. Si en el futuro se agrega la tabla de relación, basta con reemplazar esa función.
+
+Asignatura: **Aplicaciones Móviles** – Sexto Semestre  
+Universidad Técnica Estatal de Quevedo (UTEQ)
+
 <img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/3f53d08e-94cd-451e-9119-6b7f8735ec04" />
 
 <img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/4a099fa4-75c8-431e-ae34-b8d3e65f8be8" />
